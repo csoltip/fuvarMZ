@@ -1,0 +1,7 @@
+C:\Users\Péter\source\repos\Ruander\2021\0412\Fuvar\Fuvar\bin\Debug\Fuvar.exe.config
+C:\Users\Péter\source\repos\Ruander\2021\0412\Fuvar\Fuvar\bin\Debug\Fuvar.exe
+C:\Users\Péter\source\repos\Ruander\2021\0412\Fuvar\Fuvar\bin\Debug\Fuvar.pdb
+C:\Users\Péter\source\repos\Ruander\2021\0412\Fuvar\Fuvar\obj\Debug\Fuvar.csprojAssemblyReference.cache
+C:\Users\Péter\source\repos\Ruander\2021\0412\Fuvar\Fuvar\obj\Debug\Fuvar.csproj.CoreCompileInputs.cache
+C:\Users\Péter\source\repos\Ruander\2021\0412\Fuvar\Fuvar\obj\Debug\Fuvar.exe
+C:\Users\Péter\source\repos\Ruander\2021\0412\Fuvar\Fuvar\obj\Debug\Fuvar.pdb
