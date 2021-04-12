@@ -9,26 +9,36 @@ namespace Fuvar
 {
     class Program
     {
+        private string[] sorok;
+        private List<Fuvar> fuvarok;
+
+        public void indit()
+        {
+            feladat2();
+            feladat3();
+        }
+
         static void Main(string[] args)
         {
-            //2
-            string[] sorok = File.ReadAllLines("fuvar.csv");
-            List<Fuvar> fuvarok = new List<Fuvar>();
+            //new Program().indit();
+            
+            Program prg = new Program();
+            prg.indit();
+            //prg.feladat2();
+            //prg.feladat3();
+            
+            /*
+            feladat2();
 
-            foreach (string sor in sorok.Skip(1))
-            {
-                fuvarok.Add(new Fuvar(sor));
-            }
             //3
-            int N = fuvarok.Count;
-            Console.WriteLine($"3. feladat: {N} fuvar");
+            int N = feladat3();
 
             //4 
             int fuvarDb = 0;
             double bevetel = 0;
             foreach (Fuvar fuvar in fuvarok)
             {
-                if(fuvar.Id == 6185)
+                if (fuvar.Id == 6185)
                 {
                     fuvarDb++;
                     bevetel += fuvar.Viteldij + fuvar.Borravalo;
@@ -62,14 +72,14 @@ namespace Fuvar
             {
                 osszMerfold += fuvar.Tavolsag;
             }
-            Console.WriteLine($"6. feladat: {osszMerfold*1.6:F2} km");
+            Console.WriteLine($"6. feladat: {osszMerfold * 1.6:F2} km");
 
             //7
             Console.WriteLine($"7. feladat: leghoszabb fuvar:");
             int maxIdotartamInd = 0;
             for (int i = 1; i < N; i++)
             {
-                if(fuvarok[i].Idotartam > fuvarok[maxIdotartamInd].Idotartam)
+                if (fuvarok[i].Idotartam > fuvarok[maxIdotartamInd].Idotartam)
                 {
                     maxIdotartamInd = i;
                 }
@@ -109,8 +119,26 @@ namespace Fuvar
             }
 
             File.WriteAllLines("hibak.txt", hibasSorok, Encoding.UTF8);
-
+            */
             Console.ReadLine();
+        }
+
+        private int feladat3()
+        {
+            int N = fuvarok.Count;
+            Console.WriteLine($"3. feladat: {N} fuvar");
+            return N;
+        }
+
+        private void feladat2()
+        {
+            //2
+            sorok = File.ReadAllLines("fuvar.csv");
+            fuvarok = new List<Fuvar>();
+            foreach (string sor in sorok.Skip(1))
+            {
+                fuvarok.Add(new Fuvar(sor));
+            }
         }
     }
 }
