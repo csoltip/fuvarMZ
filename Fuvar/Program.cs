@@ -81,23 +81,31 @@ namespace Fuvar
 
             //8
             Console.WriteLine("8. feladt: \"hibak.txt\"");
-            List<string> hibasSorok = new List<string>();
-            hibasSorok.Add(sorok[0]);
+            List<Fuvar> hibasFuvarok = new List<Fuvar>();
             foreach (Fuvar fuvar in fuvarok)
             {
-                if(fuvar.Idotartam > 0 && fuvar.Viteldij > 0 && fuvar.Tavolsag == 0)
+                if (fuvar.Idotartam > 0 && fuvar.Viteldij > 0 && fuvar.Tavolsag == 0)
                 {
-                    //taxi_id;indulas;idotartam;tavolsag;viteldij;borravalo;fizetes_modja
-                    string sor = "";
-                    sor += fuvar.Id + ";";
-                    sor += fuvar.Indulas + ";";
-                    sor += fuvar.Idotartam + ";";
-                    sor += fuvar.Tavolsag + ";";
-                    sor += fuvar.Viteldij + ";";
-                    sor += fuvar.Borravalo + ";";
-                    sor += fuvar.FizetesiMod + "";
-                    hibasSorok.Add(sor);
+                    hibasFuvarok.Add(fuvar);
                 }
+            }
+
+            hibasFuvarok.Sort();
+
+            List<string> hibasSorok = new List<string>();
+            hibasSorok.Add(sorok[0]);
+            foreach (Fuvar fuvar in hibasFuvarok)
+            {
+                //taxi_id;indulas;idotartam;tavolsag;viteldij;borravalo;fizetes_modja
+                string sor = "";
+                sor += fuvar.Id + ";";
+                sor += fuvar.Indulas + ";";
+                sor += fuvar.Idotartam + ";";
+                sor += fuvar.Tavolsag + ";";
+                sor += fuvar.Viteldij + ";";
+                sor += fuvar.Borravalo + ";";
+                sor += fuvar.FizetesiMod + "";
+                hibasSorok.Add(sor);
             }
 
             File.WriteAllLines("hibak.txt", hibasSorok, Encoding.UTF8);

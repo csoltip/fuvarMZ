@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Fuvar
 {
-    class Fuvar
+    class Fuvar : IComparable<Fuvar>
     {
         //taxi_id;indulas;idotartam;tavolsag;viteldij;borravalo;fizetes_modja
         public int Id { get; set; }
@@ -28,6 +28,11 @@ namespace Fuvar
             Viteldij = double.Parse(s[4]);
             Borravalo = double.Parse(s[5]);
             FizetesiMod = s[6];
+        }
+
+        public int CompareTo(Fuvar other)
+        {
+            return this.Indulas.CompareTo(other.Indulas);
         }
     }
 }
